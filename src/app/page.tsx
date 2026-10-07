@@ -1,50 +1,52 @@
-const partners = [
-  {
-    name: "nori",
-    href: "https://noriagentic.com",
-    line: "Cloud agents. No lock in.",
-  },
-  {
-    name: "subconscious",
-    href: "https://subconscious.dev",
-    line: "Inference in marathon mode.",
-  },
-];
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col justify-between px-6 py-10 sm:px-12 sm:py-14">
-      <header className="text-sm text-muted">
-        nori <span className="px-1">×</span> subconscious
+    <main className="flex h-dvh flex-col justify-between overflow-hidden px-[5vw] pt-[5vw] pb-[2vw]">
+      <header className="flex items-start justify-between gap-6">
+        <div className="flex items-center gap-[1.6vw]">
+          <a
+            href="https://noriagentic.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-[1.1vw] font-mono text-[clamp(1.25rem,3vw,3rem)] leading-none font-medium"
+          >
+            <Image
+              src="/nori-mark.svg"
+              alt=""
+              width={32}
+              height={32}
+              className="size-[clamp(1.25rem,2.6vw,2.6rem)]"
+            />
+            nori
+          </a>
+          <span className="h-[clamp(1.75rem,3.2vw,3.25rem)] w-px bg-ink/30" />
+          <a
+            href="https://subconscious.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-[0.6vw] bg-ink px-[1.2vw] py-[0.7vw]"
+          >
+            <Image
+              src="/subconscious.svg"
+              alt="Subconscious"
+              width={646}
+              height={120}
+              priority
+              className="h-[clamp(1.75rem,4vw,4rem)] w-auto"
+            />
+          </a>
+        </div>
+        <p className="hidden pt-[0.4vw] font-mono text-[clamp(0.75rem,2.1vw,2.1rem)] leading-none tracking-[0.14em] sm:block">
+          LONG-HORIZON AGENTS
+        </p>
       </header>
 
-      <section className="max-w-xl">
-        <h1 className="text-3xl leading-tight tracking-tight sm:text-4xl">
-          Cloud agents that run
-          <br />
-          the whole marathon.
-        </h1>
-
-        <ul className="mt-12 space-y-4 text-sm">
-          {partners.map((p) => (
-            <li key={p.name} className="flex gap-6">
-              <a
-                href={p.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-28 shrink-0 underline decoration-muted underline-offset-4 transition-colors hover:decoration-foreground"
-              >
-                {p.name}
-              </a>
-              <span className="text-muted">{p.line}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <footer className="text-xs text-muted">
-        $ exit <span className="px-1">·</span> [process completed]
-      </footer>
+      <h1 className="font-sans text-[16.2vw] leading-[0.95] font-black tracking-[-0.042em] whitespace-nowrap">
+        still
+        <span className="mx-[0.01em] inline-block size-[0.18em] rounded-full bg-orange" />
+        running
+      </h1>
     </main>
   );
 }
