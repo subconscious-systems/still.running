@@ -38,7 +38,7 @@ export default function Home() {
           </a>
         </div>
         <p className="-mr-[0.135em] hidden font-mono text-[2.05vw] leading-none font-medium tracking-[0.135em] sm:block">
-          LONG-HORIZON AGENTS
+          long-horizon agents
         </p>
       </header>
 
