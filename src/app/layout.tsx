@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, Inter_Tight } from "next/font/google";
 import "./globals.css";
 
@@ -10,13 +10,28 @@ const interTight = Inter_Tight({
 
 const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
-  weight: ["400", "500"],
+  weight: ["500", "600"],
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "http://localhost:3000";
+
+const title = "still.running — nori × Subconscious";
+const description =
+  "Long-horizon agents. Nori cloud agents on Subconscious inference.";
+
 export const metadata: Metadata = {
-  title: "still.running — nori × Subconscious",
-  description: "Long-horizon agents. Nori × Subconscious.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  openGraph: { title, description, type: "website", siteName: "still.running" },
+  twitter: { card: "summary_large_image", title, description },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#67bd6e",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
