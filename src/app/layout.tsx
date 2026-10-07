@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Inter_Tight } from "next/font/google";
+import { IBM_Plex_Mono, Inter_Tight } from "next/font/google";
 import "./globals.css";
 
 const interTight = Inter_Tight({
@@ -8,8 +8,9 @@ const interTight = Inter_Tight({
   weight: ["900"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
+  weight: ["400", "500"],
   subsets: ["latin"],
 });
 
@@ -22,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${interTight.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${interTight.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="h-full overflow-hidden">{children}</body>
     </html>
